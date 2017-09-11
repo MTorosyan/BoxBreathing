@@ -1,7 +1,7 @@
 $(document).ready(function() {
   console.log("ready!");
 
-  $('#resetbutton').click(function() {
+  $('#square').click(function() {
 
     $('#breathins').val('5');
     $('#breathint').val('5');
@@ -14,6 +14,38 @@ $(document).ready(function() {
 
     $('#breathoutholds').val('5');
     $('#breathoutholdt').val('5');
+
+  });
+
+  $('#deep').click(function() {
+
+    $('#breathins').val('6');
+    $('#breathint').val('6');
+
+    $('#breathholdins').val('5');
+    $('#breathholdint').val('5');
+
+    $('#breathouts').val('8');
+    $('#breathoutt').val('8');
+
+    $('#breathoutholds').val('5');
+    $('#breathoutholdt').val('5');
+
+  });
+
+  $('#adeep').click(function() {
+
+    $('#breathins').val('10');
+    $('#breathint').val('10');
+
+    $('#breathholdins').val('10');
+    $('#breathholdint').val('10');
+
+    $('#breathouts').val('15');
+    $('#breathoutt').val('15');
+
+    $('#breathoutholds').val('4');
+    $('#breathoutholdt').val('4');
 
   });
 
@@ -54,11 +86,59 @@ $(document).ready(function() {
   });
 
   //animation control
-  //  timeout = setTimeout(function(){
-  //
-  //    , 500);
-  // $('.circle').on('click', function(){
-  //   $('.circle').addClass('shrink');
-  //     });
+  // This changes everything
+  "use strict";
 
+  // retrieve the element
+  var element = document.getElementById("movingcircle");
+
+  //start animation with click.
+  element.addEventListener("click", function(e){
+
+              runanimation(e)
+    //event listener
+    }, false);
+
+    function runanimation(e){
+
+      e.preventDefault;
+      element.classList.remove("run-animation");
+      void element.offsetWidth;
+
+      var brthout = $('#breathouts').val();
+      $('.circle').css("animation-direction", "normal");
+      $('.circle').css("animation-duration", brthout.toString() + "s");
+
+      element.classList.add("run-animation");
+      //detect end of animation
+        $('.circle').one('animationend', function(e) {
+        // pause animation
+              $('.circle').css("animation-play-state", "paused");
+              var brthouth = $('#breathoutholds').val();
+                setTimeout(function() {
+                        $('.circle').css("animation-play-state", "running");
+                }, brthouth);
+
+                      e.preventDefault;
+                      element.classList.remove("run-animation");
+                      void element.offsetWidth;
+
+                      var brthin = $('#breathins').val();
+                      $('.circle').css("animation-direction", "reverse");
+                      $('.circle').css("animation-duration", brthin.toString() + "s");
+
+                      element.classList.add("run-animation");
+                      //detect end of animation
+                        $('.circle').one('animationend', function(e) {
+                            // pause animation
+                            $('.circle').css("animation-play-state", "paused");
+                            var brthinh = $('#breathholdins').val();
+                              setTimeout(function() {
+                              $('.circle').css("animation-play-state", "running");
+                            }, brthinh.toString() + "s");
+              runanimation(e)
+              });
+        });
+    }
+//docready
 });
