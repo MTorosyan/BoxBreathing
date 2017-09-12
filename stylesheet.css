@@ -1,0 +1,48 @@
+body {
+  /*position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
+}
+
+.circle {
+    background: hsla(120, 100%, 25%, 0.3);
+    box-shadow: 1px 2px 2px rgba( 0, 0, 0, 0.8 );
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 20px;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    line-height: 400px;
+}
+
+.run-animation{
+      /*animation*/
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-name: shrink;
+  vertical-align: middle;
+}
+
+@keyframes shrink {
+  0%{
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+  100%{
+        transform: scale(0.1);
+        -webkit-transform: scale(0.1);
+        }
+}
+
+.circleshrink .content {
+    opacity: .1;
+}
+.circle .content {
+    opacity: 1;
+}
