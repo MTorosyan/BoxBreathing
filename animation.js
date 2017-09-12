@@ -114,7 +114,7 @@ $(document).ready(function() {
         $('.circle').one('animationend', function(e) {
         // pause animation
               $('.circle').css("animation-play-state", "paused");
-              var brthouth = $('#breathoutholds').val();
+              var brthouth = $('#breathoutholds').val() * 1000;
                 setTimeout(function() {
                         $('.circle').css("animation-play-state", "running");
                 }, brthouth);
@@ -132,10 +132,10 @@ $(document).ready(function() {
                         $('.circle').one('animationend', function(e) {
                             // pause animation
                             $('.circle').css("animation-play-state", "paused");
-                            var brthinh = $('#breathholdins').val();
+                            var brthinh = $('#breathholdins').val() * 1000;
                               setTimeout(function() {
                               $('.circle').css("animation-play-state", "running");
-                            }, brthinh.toString() + "s");
+                            }, brthinh);
               runanimation(e)
               });
         });
