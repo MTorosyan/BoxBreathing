@@ -1,5 +1,10 @@
 $(document).ready(function() {
-  console.log("ready!");
+  console.log("ready to go!");
+
+  $('#hideui').click(function() {
+     $('.options').toggle("fade");
+  });
+
 
   $('#square').click(function() {
 
@@ -94,6 +99,7 @@ $(document).ready(function() {
 
   //start animation with click.
   element.addEventListener("click", function(e){
+    $('.content').text("Breathe out");
 
               runanimation(e)
     //event listener
@@ -113,9 +119,11 @@ $(document).ready(function() {
       //detect end of animation
         $('.circle').one('animationend', function(e) {
         // pause animation
+              $('.content').text("Hold");
               $('.circle').css("animation-play-state", "paused");
               var brthouth = $('#breathoutholds').val() * 1000;
                 setTimeout(function() {
+                        $('.content').text("Breathe in");
                         $('.circle').css("animation-play-state", "running");
                 }, brthouth);
 
@@ -131,9 +139,11 @@ $(document).ready(function() {
                       //detect end of animation
                         $('.circle').one('animationend', function(e) {
                             // pause animation
+                            $('.content').text("Hold");
                             $('.circle').css("animation-play-state", "paused");
                             var brthinh = $('#breathholdins').val() * 1000;
                               setTimeout(function() {
+                                $('.content').text("Breathe out");
                               $('.circle').css("animation-play-state", "running");
                             }, brthinh);
               runanimation(e)

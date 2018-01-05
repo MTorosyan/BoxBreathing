@@ -1,9 +1,14 @@
 body {
-  /*position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);*/
+  max-width: 500px;
+  margin: auto;
+}
+
+.options {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid green;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .circle {
@@ -18,6 +23,8 @@ body {
     width: 400px;
     height: 400px;
     line-height: 400px;
+    position: absolute;
+    top:25%;
 }
 
 .run-animation{
@@ -39,10 +46,10 @@ body {
         -webkit-transform: scale(0.1);
         }
 }
-
+/*
 .circleshrink .content {
     opacity: .1;
 }
 .circle .content {
     opacity: 1;
-}
+}*/
