@@ -1,55 +1,26 @@
-body {
-  max-width: 500px;
-  margin: auto;
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
 }
 
-.options {
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid green;
-  text-align: justify;
-  text-justify: inter-word;
+#outer-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.circle {
-    background: hsla(120, 100%, 25%, 0.3);
-    box-shadow: 1px 2px 2px rgba( 0, 0, 0, 0.8 );
-    border-radius: 100%;
-    color: white;
-    text-align: center;
-    font-family: sans-serif;
-    padding: 20px;
-    overflow: hidden;
-    width: 400px;
-    height: 400px;
-    line-height: 400px;
-    position: absolute;
-    top:25%;
+#inner-circle {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: width 4s, height 4s; /* Smooth transition for expanding and contracting */
 }
-
-.run-animation{
-      /*animation*/
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-  animation-name: shrink;
-  vertical-align: middle;
-}
-
-@keyframes shrink {
-  0%{
-        transform: scale(1.0);
-        -webkit-transform: scale(1.0);
-      }
-  100%{
-        transform: scale(0.1);
-        -webkit-transform: scale(0.1);
-        }
-}
-/*
-.circleshrink .content {
-    opacity: .1;
-}
-.circle .content {
-    opacity: 1;
-}*/
